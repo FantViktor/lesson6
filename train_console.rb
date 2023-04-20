@@ -124,7 +124,7 @@ class TrainConsole
     carriage = get_carriage(type)
     train = get_train(number, type)
     carriages_count.times { train.add_carriage(carriage) }
-    puts "Поезд с номером #{number}, тип #{type} был создан c #{carriages_count} вагонов"
+    puts "Поезд с номером #{number}, тип #{type} был создан c #{carriages_count} вагонами"
   end
 
   def station_input
