@@ -136,13 +136,22 @@ class TrainConsole
     puts "Введите название поезда"
     number = gets.chomp
 
-    puts 'выберите("cargo" для грузового или "passanger" для пассажирского) of the train'
+    puts 'выберите("cargo" для грузового или "passanger" для пассажирского)'
     type = gets.chomp
-
+    case type
+    when "cargo"
+      CargoTrain.new(number, [])
+    when "passanger"
+    PassangerTrain.new(number, [])
+    else
+      return puts "Попробуйте снова"
+      end
     puts "Введите количество вагонов"
-    carriages_count = gets.chomp.to_i
 
+    carriages_count = gets.chomp.to_i
     return number, type, carriages_count
+    # raise "Поезд не создан. Надо было ввести 1 или 2" unless include?(type)
+
   end
 
   def get_train(number, type)
